@@ -11,6 +11,7 @@ public class TrainingApp
 
         UserInterfaceSATS uiSATS  = new UserInterfaceSATS();
         uiSATS.welcomeAnUser();
+
     }
 }
 {
