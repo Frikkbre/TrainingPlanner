@@ -4,17 +4,20 @@ import org.jetbrains.annotations.NotNull;
 
 public class UserExercise
 {
+    
 
+    private String typeOfWorkout;
     private String nameOfExercise;
     private int totalSets;
     private int totalRepetitions;
+
 
     public UserExercise()
     {
 
     }
 
-    public UserExercise(String nameOfExercise, int totalSets, int totalRepetitions)
+    public UserExercise(String typeOfWorkout, String nameOfExercise, int totalSets, int totalRepetitions)
     {
 
         /*
@@ -22,9 +25,20 @@ public class UserExercise
         this.totalSets = totalSets;
         this.totalRepetitions = totalRepetitions;
          */
+        setTypeOfWorkout(typeOfWorkout);
         setNameOfExercise(nameOfExercise);
         setTotalSets(totalSets);
         setTotalRepetitions(totalRepetitions);
+    }
+
+    public String getTypeOfWorkout()
+    {
+        return typeOfWorkout;
+    }
+
+    public void setTypeOfWorkout(String typeOfWorkout)
+    {
+        this.typeOfWorkout = typeOfWorkout;
     }
 
     public String getNameOfExercise()
