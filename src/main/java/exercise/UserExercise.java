@@ -17,6 +17,11 @@ public class UserExercise
     public UserExercise(String nameOfExercise, int totalSets, int totalRepetitions)
     {
 
+        /*
+        this.nameOfExercise = nameOfExercise;
+        this.totalSets = totalSets;
+        this.totalRepetitions = totalRepetitions;
+         */
         setNameOfExercise(nameOfExercise);
         setTotalSets(totalSets);
         setTotalRepetitions(totalRepetitions);

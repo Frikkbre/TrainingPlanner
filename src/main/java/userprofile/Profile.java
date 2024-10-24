@@ -1,32 +1,18 @@
-/**
- * Class to create user profile for training planner app
- * @author Frikk Brændsrød
- * @since 14.10.2024
- * @version 0.0.1
- */
-
 package userprofile;
+
+import exercise.UserExercise;
 
 public class Profile
 {
-    /**
-     * Created fields required by the program.
-     */
-    private int height;    //Hvorfor er height int???
+    private int height;
     private float weight;
     private String gender;
     private int totalWorkoutPerWeek;
 
-    /**
-     * Constructor
-     * @param gender
-     * @param totalWorkoutPerWeek
-     *
-     */
     public Profile(String gender, int totalWorkoutPerWeek)
     {
-        this.height = -1;
-        this.weight = -1;
+        this.height = 0;
+        this.weight = 0;
         setGender(gender);
         setTotalWorkoutPerWeek(totalWorkoutPerWeek);
     }
@@ -38,13 +24,11 @@ public class Profile
 
     public void setHeight(int height)
     {
-        if (height > 0){
-            this.height = height;
+        if (height < 0)
+        {
+            throw new IllegalArgumentException("Height cannot be negative");
         }
-        else{
-            throw new IllegalArgumentException("Height must be postive");
-        }
-
+        this.height = height;
     }
 
     public float getWeight()
@@ -54,12 +38,11 @@ public class Profile
 
     public void setWeight(float weight)
     {
-        if (weight < 0){
-            this.weight = weight;
+        if (weight < 0)
+        {
+            throw new IllegalArgumentException("Weight cannot be negative");
         }
-        else{
-            throw new IllegalArgumentException("Weight must be postive");
-        }
+        this.weight = weight;
     }
 
     public String getGender()
@@ -69,13 +52,11 @@ public class Profile
 
     public void setGender(String gender)
     {
-        if (!gender.isEmpty() || !gender.isBlank()){     //Is !gender legal?   | = option + 7
-            this.gender = gender;
+        if (gender == null || gender.isEmpty() || gender.isBlank())
+        {
+            throw new IllegalArgumentException("Gender cannot be null, empty or blank.");
         }
-       else{
-           throw new IllegalArgumentException("Gender must be either Male or Female");
-        }
-
+        this.gender = gender;
     }
 
     public int getTotalWorkoutPerWeek()
@@ -83,14 +64,12 @@ public class Profile
         return totalWorkoutPerWeek;
     }
 
-
     public void setTotalWorkoutPerWeek(int totalWorkoutPerWeek)
     {
-        if (totalWorkoutPerWeek > 0){
-              this.totalWorkoutPerWeek = totalWorkoutPerWeek;
+        if (totalWorkoutPerWeek < 0)
+        {
+            throw new IllegalArgumentException("Total work out per week cannot be negative");
         }
-        else{
-            throw new IllegalArgumentException("Total workouts per week must be between 0 and 14");
-        }
+        this.totalWorkoutPerWeek = totalWorkoutPerWeek;
     }
 }
